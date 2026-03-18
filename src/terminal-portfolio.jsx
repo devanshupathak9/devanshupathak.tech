@@ -113,13 +113,13 @@ const BOOT_LINES = [
   "CPU: Devanshu Pathak Brain v8.4 @ 3.14GHz   [OK]",
   "RAM: Unlimited Curiosity Installed            [OK]",
   "Checking filesystem integrity...",
-  "Loading modules: [backend] [AI] [security] [systems]",
+  "Loading modules: [backend] [AI] [systems]",
   "Mounting volumes... /home/devanshu            [OK]",
   "Starting portfolio daemon...                  [OK]",
   "",
   "╔═══════════════════════════════════════════════════════════╗",
   "║          DEVANSHU PATHAK  ::  PORTFOLIO v1.0              ║",
-  "║    Software Engineer  |  AI Builder  |  CTF Hacker        ║",
+  "║   Software Engineer | AI | Low Level Systems Enthusiast   ║",
   "╚═══════════════════════════════════════════════════════════╝",
   "",
   "  Founding Engineer @ DocLens.ai | IIT Kharagpur ",
@@ -168,14 +168,13 @@ const SECTIONS = {
     "├──────────────────────────────────────────────────────────┤",
     "│  help              →  Show this help menu                │",
     "│  ls                →  List sections here                 │",
-    "│  cd <section>      →  Navigate into a section           │",
+    "│  cd <section>      →  Navigate into a section            │",
     "│  cd ..             →  Go back to parent                  │",
-    "│  cd ~  /  cd home  →  Return to root                    │",
+    "│  cd ~  /  cd home  →  Return to root                     │",
     "│  clear             →  Clear terminal                     │",
     "│  whoami            →  Quick identity                     │",
-    "│  pwd               →  Show current path                 │",
-    "│  resume            →  Download my resume                 │",
-    "│  sudo hire-me      →  ??? (try it)                      │",
+    "│  pwd               →  Show current path                  │",
+    "│  resume            →  View my CV                         │",
     "├──────────────────────────────────────────────────────────┤",
     "│  SECTIONS:  about · skills · experience · projects       │",
     "│             education · publications · blog · contact    │",
@@ -193,35 +192,36 @@ const SECTIONS = {
       "drwxr-xr-x  publications/",
       "drwxr-xr-x  blog/",
       "drwxr-xr-x  contact/",
-      "-rw-r--r--  resume",
+      "drwxr-xr-x  resume/",
     ]};
     return { type: "lines", lines: ["(empty directory)"] };
   },
 
   whoami: () => ({ type: "lines", lines: [
-    "uid=1000(devanshu) gid=1000(engineer)",
-    "groups=backend,AI,systems,security,ctf-player,iit-kgp-alumni",
+    "uid=1000(devanshu pathak) gid=1000(software engineer)",
+    "groups=backend, AI, systems, iit-kgp-alumni",
   ]}),
 
   about: () => ({ type: "mixed", parts: [
     { kind: "line", text: "── ~/about ──────────────────────────────────────────────────" },
     { kind: "line", text: "" },
     { kind: "prose", text:
-      `Software Engineer specializing in scalable backend and AI-driven systems, with experience designing end-to-end service architectures, APIs, and automation pipelines for real-world production applications.
+            `I am a Software Engineer specializing in backend and AI-driven systems, with experience in designing end-to-end service architectures, APIs, and automation pipelines for real-world production applications.
 
-I enjoy working close to the fundamentals of software — understanding how things work beneath abstractions — and apply this mindset while designing backend services, AI-powered pipelines, and automation-heavy systems. My experience spans building RAG pipelines, event-driven architectures, and production-grade data workflows at DocLens.ai and CASHe.
+I have a deep interest in understanding how systems actually work — going beyond abstractions to explore the fundamentals. I enjoy building things from scratch to truly understand them, including OS internals, memory behavior, database systems, and networking. It's a constant learning journey, and curiosity drives me to understand every layer.
 
-Strong interest in system internals and networking, actively exploring low-level concepts including operating systems, memory behavior, and hardware-software interaction through systems programming and CTF-based security challenges. This curiosity drives me to write clean, predictable code and build systems that are not only functional but also robust under real-world constraints.`
-    },
+I also enjoy problem-solving and exploring CTF challenges to deepen my understanding of systems and security.`
+
+  },
     { kind: "line", text: "" },
     { kind: "line", text: "'cd ..' → back  |  'cd ~' → home" },
   ]}),
 
   skills: () => ({ type: "mixed", parts: [
-    { kind: "line", text: "── ~/skills ─────────────────────────────────────────────────────────────────────────────────────────────────────" },
+    { kind: "line", text: "── ~/skills ──────────────────────────────────────────────────" },
     { kind: "line", text: "" },
     { kind: "table",
-      headers: ["Category", "Technologies"],
+      headers: ["Category", "Technologia"],
       rows: [
         ["Languages",    "Python | C / C++ | JavaScript | Bash"],
         ["Frameworks",   "Django | Flask | Express.js | LangChain | LangGraph"],
@@ -242,7 +242,7 @@ Strong interest in system internals and networking, actively exploring low-level
   // Fields: title, company, period, location, bullets (array of strings)
   // ─────────────────────────────────────────────────────────────────────────
   experience: () => ({ type: "mixed", parts: [
-    { kind: "line", text: "── ~/experience ─────────────────────────────────────────────────────────────────────────────────────────────────────" },
+    { kind: "line", text: "── ~/experience ──────────────────────────────────────────────────" },
     { kind: "line", text: "" },
 
     // ── ADD / EDIT JOBS BELOW ────────────────────────────────────────────────
@@ -284,14 +284,14 @@ Strong interest in system internals and networking, actively exploring low-level
   // Fields: num, title, stack, period, status, link, bullets (array of strings)
   // ─────────────────────────────────────────────────────────────────────────
   projects: () => ({ type: "mixed", parts: [
-    { kind: "line", text: "── ~/projects ──────────────────────" },
+    { kind: "line", text: "── ~/projects ──────────────────────────────────────────────────" },
     { kind: "line", text: "" },
 
     // ── ADD / EDIT PROJECTS BELOW ────────────────────────────────────────────
     { kind: "projcard", project: {
       num: "01", title: "Glens — AI-Powered Gmail Summarisation Extension",
       stack: "Chrome MV3 · Gemini Nano · JavaScript · DOM APIs",
-      period: "2024",
+      period: "2025",
       status: "● Shipped",
       link: "https://github.com/devanshupathak9/Glens",
       bullets: [
@@ -303,7 +303,7 @@ Strong interest in system internals and networking, actively exploring low-level
     { kind: "projcard", project: {
       num: "02", title: "Sastamaal — Real-Time Quick Commerce Price Comparison",
       stack: "Node.js · Puppeteer · Docker · AWS ECS Fargate · Express",
-      period: "2024",
+      period: "2025",
       status: "● Shipped",
       link: "https://github.com/devanshupathak9/Sastamaal",
       bullets: [
@@ -314,11 +314,11 @@ Strong interest in system internals and networking, actively exploring low-level
     }},
     { kind: "line", text: "" },
     { kind: "projcard", project: {
-      num: "03", title: "StreakHub — Cross-Platform Streak Tracking System",
+      num: "03", title: "StreakArena — Cross-Platform Streak Tracking System",
       stack: "Backend Systems · REST APIs · Leaderboards · Real-time",
-      period: "2024 – Present",
+      period: "2026 - Present",
       status: "◌ In Progress",
-      link: "https://github.com/devanshupathak9/Streakhub-backend",
+      link: "https://github.com/devanshupathak9/StreakArena",
       bullets: [
         "Building a centralized streak management platform to track daily tasks across multiple platforms through a unified dashboard, enabling configurable streak definitions and integration support for external developer platforms.",
         "Designing a scalable backend system to handle task verification, streak validation logic, leaderboard computation, and real-time updates, enabling competitive challenges among friends and third-party integrations.",
@@ -336,7 +336,7 @@ Strong interest in system internals and networking, actively exploring low-level
   // paste it below the last one (before the closing line), fill in your fields.
   // ─────────────────────────────────────────────────────────────────────────
   publications: () => ({ type: "mixed", parts: [
-    { kind: "line", text: "─ ~/publications ───────────────────────────────────────────────────────────────────────────────────────────────" },
+    { kind: "line", text: "─ ~/publications ──────────────────────────────────────────────────" },
     { kind: "line", text: "" },
 
     // ── ADD / EDIT PUBLICATIONS BELOW ────────────────────────────────────────
@@ -375,7 +375,7 @@ Strong interest in system internals and networking, actively exploring low-level
 
   // ─────────────────────────────────────────────────────────────────────────
   education: () => ({ type: "mixed", parts: [
-    { kind: "line", text: "─ ~/education ───────────────────────────────────────────────────────────────────────────────────────────────────" },
+    { kind: "line", text: "─ ~/education ──────────────────────────────────────────────────" },
     { kind: "line", text: "" },
     { kind: "table",
       headers: ["Institution", "Degree", "Year", "Grade"],
@@ -392,13 +392,14 @@ Strong interest in system internals and networking, actively exploring low-level
 
   // ── BLOG: table without Tag column ────────────────────────────────────────
   blog: () => ({ type: "mixed", parts: [
-    { kind: "line", text: "─ ~/blog ────────────────────────────────────────────────────────────────────────────────────────────────────────" },
+    { kind: "line", text: "─ ~/blog ──────────────────────────────────────────────────" },
     { kind: "line", text: "" },
     { kind: "table",
       headers: ["#", "Title", "Link"],
       rows: [
         ["01", "Chrome Built-in AI Extension: Glens — Smart Gmail Summarizer", "[Read →](https://medium.com/@pathakdevanshu9/chrome-built-in-ai-extension-glens-smart-gmail-summarizer-2f4f25936c90)"],
         ["02", "How a Simple %61 Bypassed a Reverse Proxy: EHAX CTF Writeup",        "[Read →](https://medium.com/@pathakdevanshu9/how-a-simple-61-bypassed-a-reverse-proxy-ehax-ctf-writeup-eeec0bb82af1)"],
+        ["03", "Demystifying DNS: From Root Servers to Connecting Hostinger with Vercel", "[Read →](https://medium.com/@pathakdevanshu9/demystifying-dns-from-root-servers-to-connecting-hostinger-with-vercel-027a18017454)"]
       ]
     },
     { kind: "line", text: "" },
@@ -407,26 +408,23 @@ Strong interest in system internals and networking, actively exploring low-level
   ]}),
 
 
-  resume: () => ({ type: "lines", lines: [
-    "┌── ~/resume ────────────────────────────────────────────────┐",
-    "│                                                            │",
-    "│  📄  Devanshu_Pathak_Resume.txt                            │",
-    "│                                                            │",
-    "│  ┌────────────────────────────────────────────────────┐   │",
-    "│  │  Type  'resume'         → download the file        │   │",
-    "│  │  Type  'cat resume.txt' → view inline here         │   │",
-    "│  └────────────────────────────────────────────────────┘   │",
-    "│                                                            │",
-    "│  Online  →  [Google Drive](https://drive.google.com)       │",
-    "│  LinkedIn→  [linkedin.com/in/devanshu-pathak-39623b172](https://linkedin.com/in/devanshu-pathak-39623b172) │",
-    "│  GitHub  →  [github.com/devanshupathak9](https://github.com/devanshupathak9)      │",
-    "│                                                            │",
-    "└────────────────────────────────────────────────────────────┘",
-    "  'cd ..' → back  |  'cd ~' → home",
+resume: () => ({ type: "mixed", parts: [
+    { kind: "line", text: "── ~/resume ──────────────────────────────────────────────" },
+    { kind: "line", text: "" },
+    { kind: "line", text: "📄  Devanshu_Pathak_CV" },
+    { kind: "line", text: "" },
+    { kind: "line", text: "View my CV online:" },
+    { kind: "line", text: "[Google Drive](https://drive.google.com/drive/folders/1OpjYW5b6umHzRqTGCIYK1v88G4l49NYq?usp=sharing)" },
+    { kind: "line", text: "" },
+    { kind: "line", text: "Also available on:" },
+    { kind: "line", text: "LinkedIn → [linkedin.com/in/devanshu-pathak-39623b172](https://linkedin.com/in/devanshu-pathak-39623b172)" },
+    { kind: "line", text: "GitHub  → [github.com/devanshupathak9](https://github.com/devanshupathak9)" },
+    { kind: "line", text: "" },
+    { kind: "line", text: "'cd ..' → back  |  'cd ~' → home" },
   ]}),
 
   contact: () => ({ type: "mixed", parts: [
-    { kind: "line", text: "── ~/contact ─────────────────────────────────────────────────────────────────────────────────────────────────────" },
+    { kind: "line", text: "── ~/contact ──────────────────────────────────────────────" },
     { kind: "line", text: "" },
     { kind: "table",
       headers: ["Channel", "Details"],
@@ -449,33 +447,13 @@ Strong interest in system internals and networking, actively exploring low-level
   home: () => ({ type: "lines", lines: [
     "╔═══════════════════════════════════════════════════════════╗",
     "║          DEVANSHU PATHAK  ::  PORTFOLIO v1.0              ║",
-    "║    Software Engineer  |  AI Builder  |  CTF Hacker        ║",
+    "║   Software Engineer | AI | Low Level Systems Enthusiast   ║",
     "╚═══════════════════════════════════════════════════════════╝",
     "",
     " Founding Engineer @ DocLens.ai | IIT Kharagpur  ",
     "  Bengaluru, India",
     "",
     "  Type 'help' to see available commands.",
-  ]}),
-
-  "hire-me": () => ({ type: "lines", lines: [
-    "",
-    "  ██╗  ██╗██╗██████╗ ███████╗    ███╗   ███╗███████╗██╗",
-    "  ██║  ██║██║██╔══██╗██╔════╝    ████╗ ████║██╔════╝██║",
-    "  ███████║██║██████╔╝█████╗      ██╔████╔██║█████╗  ██║",
-    "  ██╔══██║██║██╔══██╗██╔══╝      ██║╚██╔╝██║██╔══╝  ╚═╝",
-    "  ██║  ██║██║██║  ██║███████╗    ██║ ╚═╝ ██║███████╗██╗",
-    "  ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚══════╝   ╚═╝     ╚═╝╚══════╝╚═╝",
-    "",
-    "  sudo: Permission granted. Initiating hire sequence...",
-    "  > Checking calendar availability............. [OPEN]",
-    "  > Verifying skills match..................... [EXCEEDED]",
-    "  > Confirming culture fit..................... [STRONG]",
-    "  > Generating offer letter................... [DONE ✓]",
-    "",
-    "  You clearly have great taste. Let's build something.",
-    "  → pathakdevanshu9@gmail.com",
-    "",
   ]}),
 };
 
@@ -918,21 +896,11 @@ export default function TerminalPortfolio() {
       " .:::::::::.       Stack: Python C++ JS",
     ]);
 
-    if (lower === "sudo hire-me" || lower === "sudo hire me")
-      return { outputData: SECTIONS["hire-me"](), newCwd: curCwd };
     if (lower === "sudo")
-      return simple(["sudo: please specify a command. Hint: try 'sudo hire-me' 👀"]);
+      return simple(["sudo: command not found"]);
 
-    if (lower === "resume" || lower === "cat resume.txt" || lower === "open resume") {
-      downloadResume();
-      return simple([
-        "  Initiating resume download...",
-        "  File: Devanshu_Pathak_Resume.txt",
-        "  [████████████████████████] 100%  complete.",
-        "  ✓ Saved to your Downloads folder.",
-        "",
-        "  Or view online → [Google Drive](https://drive.google.com)",
-      ]);
+    if (lower === "resume" || lower === "cat resume.txt" || lower === "cd resume") {
+      return { outputData: SECTIONS.resume(), newCwd: curCwd };
     }
 
     if (base === "cd") {

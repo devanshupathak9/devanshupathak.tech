@@ -1,16 +1,24 @@
-# React + Vite
+# Portfolio — Devanshu Pathak
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A terminal-inspired, interactive portfolio website showcasing my work as a Software Engineer.
 
-Currently, two official plugins are available:
+**Live:** https://devpathak.tech
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Deployment
 
-## React Compiler
+Deployed on **Vercel** using a custom domain purchased through **Hostinger**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Setup guide:** For domain configuration and DNS setup, see my Medium article:
+[Demystifying DNS: From Root Servers to Connecting Hostinger with Vercel](https://medium.com/@pathakdevanshu9/demystifying-dns-from-root-servers-to-connecting-hostinger-with-vercel-027a18017454)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Contact
+
+- **Email:** pathakdevanshu9@gmail.com
+- **GitHub:** [github.com/devanshupathak9](https://github.com/devanshupathak9)
+- **LinkedIn:** [linkedin.com/in/devanshu-pathak-39623b172](https://linkedin.com/in/devanshu-pathak-39623b172)
+- **Medium:** [@pathakdevanshu9](https://medium.com/@pathakdevanshu9)
+- **Location:** Bengaluru, Karnataka, India
+
+---

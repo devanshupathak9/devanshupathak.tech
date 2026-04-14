@@ -221,7 +221,7 @@ I also enjoy problem-solving and exploring CTF challenges to deepen my understan
     { kind: "line", text: "── ~/skills ──────────────────────────────────────────────────" },
     { kind: "line", text: "" },
     { kind: "table",
-      headers: ["Category", "Technologia"],
+      headers: ["Category", "Technologies"],
       rows: [
         ["Languages",    "Python | C / C++ | JavaScript | Bash"],
         ["Frameworks",   "Django | Flask | Express.js | LangChain | LangGraph"],
@@ -988,29 +988,35 @@ export default function TerminalPortfolio() {
         /* ── Terminal outer shell ── */
         .terminal {
           position: relative; z-index: 20;
-          width: min(860px, 96vw);
-          height: min(680px, 92vh);
+          width: min(1120px, 96vw);
+          height: min(88vh, 860px);
           display: flex; flex-direction: column;
-          border-radius: 10px;
+          border-radius: 12px;
+          border: 1px solid #00ff4118;
           box-shadow:
-            0 0 0 1px #00ff4120,
-            0 0 40px #00ff4112,
-            0 0 80px #00ff4108,
-            0 30px 60px rgba(0,0,0,0.7);
+            0 0 0 1px #00ff4122,
+            0 0 40px #00ff411a,
+            0 0 90px #00ff4110,
+            0 0 160px #00ff410a,
+            0 45px 90px rgba(0,0,0,0.88);
           overflow: hidden;
         }
 
         /* ── Title bar ── */
         .tbar {
-          display: flex; align-items: center; gap: 8px;
-          padding: 10px 16px; flex-shrink: 0;
-          background: rgba(0,14,0,0.97);
-          border-bottom: 1px solid #00ff4125;
-          backdrop-filter: blur(8px);
+          display: flex; align-items: center; gap: 12px;
+          padding: 11px 18px; flex-shrink: 0;
+          background: linear-gradient(180deg, rgba(0,20,2,0.99) 0%, rgba(0,12,1,0.97) 100%);
+          border-bottom: 1px solid #00ff4120;
+          user-select: none;
         }
-        .dot { width: 12px; height: 12px; border-radius: 50%; cursor: default; }
-        .d-r { background: #ff5f57; } .d-y { background: #ffbd2e; } .d-g { background: #28ca41; }
-        .tbar-title { color: #00ff4160; font-size: 12px; margin: 0 auto; letter-spacing: 2px; }
+        .dots { display: flex; align-items: center; gap: 7px; }
+        .dot { width: 13px; height: 13px; border-radius: 50%; cursor: default; flex-shrink: 0; transition: filter .15s; }
+        .dot:hover { filter: brightness(1.25); }
+        .d-r { background: #ff5f57; box-shadow: 0 0 5px #ff5f5755; }
+        .d-y { background: #ffbd2e; box-shadow: 0 0 5px #ffbd2e55; }
+        .d-g { background: #28ca41; box-shadow: 0 0 5px #28ca4155; }
+        .tbar-title { color: #00ff4165; font-size: 12px; margin: 0 auto; letter-spacing: 1.5px; text-shadow: 0 0 14px #00ff4118; }
         .audio-btn {
           background: transparent;
           border: 1px solid #00ff4135;
@@ -1033,8 +1039,8 @@ export default function TerminalPortfolio() {
         /* ── Scrollable body ── */
         .tbody {
           flex: 1; overflow-y: auto; overflow-x: hidden;
-          background: rgba(0,5,0,0.93);
-          padding: 18px 20px 8px;
+          background: rgba(0,4,0,0.95);
+          padding: 20px 26px 8px;
           backdrop-filter: blur(4px);
         }
 
@@ -1219,6 +1225,54 @@ export default function TerminalPortfolio() {
           border-radius: inherit;
         }
 
+        /* ── Tab bar ── */
+        .tabbar {
+          display: flex; align-items: stretch;
+          background: rgba(0,8,0,0.98);
+          border-bottom: 1px solid #00ff4115;
+          flex-shrink: 0;
+          padding: 0 12px;
+        }
+        .tab {
+          padding: 5px 16px 4px;
+          font-size: 11.5px;
+          color: #00ff4150;
+          letter-spacing: 0.5px;
+          cursor: default;
+          border-bottom: 2px solid transparent;
+          user-select: none;
+          white-space: nowrap;
+        }
+        .tab-active {
+          color: #b8ffca;
+          border-bottom-color: #00ff41;
+          background: rgba(0,255,65,0.045);
+        }
+
+        /* ── Status bar ── */
+        .statusbar {
+          display: flex; align-items: center; justify-content: space-between;
+          padding: 4px 18px;
+          background: linear-gradient(180deg, rgba(0,12,1,0.97) 0%, rgba(0,18,2,0.99) 100%);
+          border-top: 1px solid #00ff4118;
+          flex-shrink: 0;
+          font-size: 11px;
+          letter-spacing: 0.3px;
+          user-select: none;
+        }
+        .sb-left { display: flex; align-items: center; gap: 14px; color: #00ff4165; }
+        .sb-right { display: flex; align-items: center; gap: 14px; color: #00ff4145; }
+        .sb-pill {
+          background: rgba(0,255,65,0.10);
+          color: #00ff41;
+          padding: 1px 7px;
+          border-radius: 2px;
+          font-size: 10px;
+          letter-spacing: 0.8px;
+          text-transform: uppercase;
+          border: 1px solid #00ff4125;
+        }
+
         /* ── Mobile ── */
         @media (max-width: 600px) {
           .terminal { width: 100vw; height: 100dvh; border-radius: 0; }
@@ -1226,11 +1280,13 @@ export default function TerminalPortfolio() {
           .line-out, .line-boot { font-size: 12px; white-space: pre-wrap; }
           .tt { font-size: 12px; }
           .tt th, .tt td { padding: 5px 8px; }
+          .tabbar { display: none; }
+          .statusbar { padding: 3px 12px; font-size: 10px; }
         }
 
         /* ── Large screen: cap and give breathing room ── */
         @media (min-width: 1400px) {
-          .terminal { width: min(1000px, 72vw); height: min(760px, 85vh); }
+          .terminal { width: min(1260px, 84vw); height: min(90vh, 920px); }
         }
       `}</style>
 
@@ -1245,7 +1301,7 @@ export default function TerminalPortfolio() {
 
         {/* Title bar */}
         <div className="tbar">
-          <div className="dot d-r"/><div className="dot d-y"/><div className="dot d-g"/>
+          <div className="dots"><div className="dot d-r"/><div className="dot d-y"/><div className="dot d-g"/></div>
           <span className="tbar-title">devanshu@portfolio — {cwd} — zsh</span>
           <button
             onClick={e => { e.stopPropagation(); toggleAudio(); }}
@@ -1254,6 +1310,11 @@ export default function TerminalPortfolio() {
           >
             {muted ? "♪ off" : "♪ on"}
           </button>
+        </div>
+
+        {/* Tab bar */}
+        <div className="tabbar">
+          <span className="tab tab-active">zsh — {curPath}</span>
         </div>
 
         {/* Scrollable content */}
@@ -1290,7 +1351,7 @@ export default function TerminalPortfolio() {
 
           {/* Live input */}
           {ready && (
-            <div className="prow" style={{ paddingTop: 4, paddingBottom: 20 }}>
+            <div className="prow" style={{ paddingTop: 4, paddingBottom: 10 }}>
               <span className="pu">devanshu</span>
               <span className="pat">@</span>
               <span className="ph">portfolio</span>
@@ -1313,6 +1374,18 @@ export default function TerminalPortfolio() {
 
           {booting && <div style={{ paddingBottom: 16 }}><span className="cur">█</span></div>}
           <div ref={bottomRef} />
+        </div>
+
+        {/* Status bar */}
+        <div className="statusbar">
+          <div className="sb-left">
+            <span className="sb-pill">zsh</span>
+            <span>devanshu@portfolio:{curPath}</span>
+          </div>
+          <div className="sb-right">
+            <span>UTF-8</span>
+            <span>Fira Code</span>
+          </div>
         </div>
       </div>
     </div>
